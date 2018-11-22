@@ -31,6 +31,7 @@ RUN mkdir /var/www/python-intro
 RUN mkdir /var/log/uwsgi
 RUN touch /var/log/uwsgi/python-intro.log
 
+WORKDIR /var/www/python-intro
 ENV PYTHONPATH=/var/www/python-intro
 
 COPY entrypoint.sh /entrypoint.sh

@@ -1,44 +1,36 @@
 from boto3.s3.transfer import S3Transfer
 import boto3
 import yaml
+import os
 
 from intro.app import app
 
 global s3client
 
-print('app.py from app/')
-
-def init_s3():
-    s3client = boto3.client(
-        's3',
-        aws_access_key_id=conf['access_key'],
-        aws_secret_access_key=conf['secret_key'],
-    )
-    """ :type : pyboto3.s3 """
-
-
-def read_configuration():
-    with open("prop.yaml", 'r') as stream:
-        try:
-            global conf
-            conf = yaml.load(stream)
-            print(conf['access_key'])
-        except yaml.YAMLError as exc:
-            print(exc)
-
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=4446, threaded=True, debug=True)
+
+
+# def read_configuration():
+with open("prop.yaml", 'r') as stream:
+    try:
+        global conf
+        conf = yaml.load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
+
+# def init_s3():
+s3client = boto3.client(
+    's3',
+    aws_access_key_id=conf['access_key'],
+    aws_secret_access_key=conf['secret_key'],
+)
+""" :type : pyboto3.s3 """
 
 
 @app.route("/")
 def hello():
     return "Hello World from Flask"
-
-
-# @app.route("/raca")
-# def raca():
-#     return "Hello Raca"
 
 
 @app.route("/buckets")
