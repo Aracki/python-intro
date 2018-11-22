@@ -1,0 +1,4 @@
+uwsgi
+flask
+PyYAML
+boto3

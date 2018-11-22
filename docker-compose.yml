@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  python-intro:
+    image: python-intro
+    volumes:
+      - ./:/var/www/python-intro
+    ports:
+      - "10180:80"
+      - "10146:4446"
+    networks:
+      - python-intro-network
+
+networks:
+  python-intro-network:

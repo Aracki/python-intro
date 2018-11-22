@@ -1,12 +1,12 @@
-from flask import Flask
 from boto3.s3.transfer import S3Transfer
-
 import boto3
 import yaml
 
-app = Flask(__name__)
+from intro.app import app
+
 global s3client
 
+print('app.py from app/')
 
 def init_s3():
     s3client = boto3.client(
@@ -28,9 +28,7 @@ def read_configuration():
 
 
 if __name__ == "__main__":
-    read_configuration()
-    init_s3()
-    app.run(host='0.0.0.0', debug=True, port=80)
+    app.run(host='0.0.0.0', port=4446, threaded=True, debug=True)
 
 
 @app.route("/")
@@ -38,9 +36,9 @@ def hello():
     return "Hello World from Flask"
 
 
-@app.route("/raca")
-def raca():
-    return "Hello Raca"
+# @app.route("/raca")
+# def raca():
+#     return "Hello Raca"
 
 
 @app.route("/buckets")

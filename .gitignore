@@ -1,2 +1,6 @@
-app/prop.yaml
+uwsgi.sock
 .idea/*
+*.pyc
+intro/config/env.py
+intro/app/prop.yaml
+venv/
