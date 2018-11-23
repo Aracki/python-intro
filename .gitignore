@@ -2,5 +2,5 @@ uwsgi.sock
 .idea/*
 *.pyc
 config/env.py
-prop.yaml
+aws-config.yml
 venv/

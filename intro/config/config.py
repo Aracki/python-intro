@@ -2,7 +2,7 @@ import yaml
 
 
 def get_config():
-    with open("prop.yaml", 'r') as stream:
+    with open("aws-config.yml", 'r') as stream:
         try:
             conf = yaml.load(stream)
             return conf
