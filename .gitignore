@@ -1,6 +1,6 @@
 uwsgi.sock
 .idea/*
 *.pyc
-intro/config/env.py
+config/env.py
 prop.yaml
 venv/
