@@ -5,7 +5,12 @@ Introduction to Python with Docker. Flask web app. Uploads to S3. SQLAlchemy.
 
 1. `docker` & `docker-compose` installed.
 2. Create `aws-config.yml` in the root of the project based on the template given.
-3. PyCharm with docker's remote python interpreter set up. 
+
+
+## PyCharm settings
+
+1. Set up docker's remote python interpreter 
+2. After adding a new package to requirements.txt you will need to rerun container and restart PyCharm
 
 ## Deployment
 

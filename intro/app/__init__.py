@@ -22,7 +22,6 @@ def raca():
 
 @app.route("/buckets")
 def get_all_buckets():
-    """ :type : pyboto3.s3 """
     for bucket in s3client.list_buckets():
         print(bucket)
     return "ok"
@@ -30,9 +29,7 @@ def get_all_buckets():
 
 @app.route("/upload")
 def upload():
-    """ :type : pyboto3.s3 """
-    print("starting upload...")
     transfer = S3Transfer(s3client)
-    transfer.upload_file('/entrypoint.sh', cfg['bucket_name'], 'file1')
+    transfer.upload_file('/entrypoint.sh', cfg['bucket_name'], 'entrypoint.sh')
     return "ok"
 
