@@ -2,3 +2,4 @@ uwsgi
 flask
 PyYAML
 boto3
+pyboto3
